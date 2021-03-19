@@ -16,6 +16,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag darkryder16/playlist_downloader:$IMAGE_TAG
+      run: docker build . --file Dockerfile --tag darkryder16/playlist_downloader:"$IMAGE_TAG"
     - name: Push the Docker image to hub
-      run: docker push darkryder16/playlist_downloader:$IMAGE_TAG
+      run: docker push darkryder16/playlist_downloader:"$IMAGE_TAG"

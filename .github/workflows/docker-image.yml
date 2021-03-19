@@ -16,3 +16,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag playlist_downloader:$(date +%s)
+    - name: Push the Docker image to hub
+      run: docker push darkryder16/playlist_downloader:$(date +%s)

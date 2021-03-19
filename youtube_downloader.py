@@ -5,6 +5,7 @@ class Main:
     # This dictionary will contain the folder name and the URL to the playlist
     _dicData = {}
     _initialized = False
+    _debug = True
 
     def __init__(self):
         print('Main Contructor called')
@@ -30,8 +31,16 @@ class Main:
                 return False
             # print('Folder Name: {} && URL: {}'.format(_tokens[0], _tokens[1]))
             self._dicData[_tokens[0]] = _tokens[1]
+        if(self._debug):
+            self._debugConfigValues()
+
         return True
 
+#region debug functions
+    def _debugConfigValues(self):
+        for key, value in self._dicData.items():
+            print(key, value)
+#end region
 
 if __name__ == "__main__":
     main = Main()

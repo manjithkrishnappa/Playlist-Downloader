@@ -17,8 +17,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag darkryder16/playlist_downloader:latest
-    - name: Login to Docker
-      run: docker login -u {{ secrets.DOCKER_USERNAME }}
     - name: Push the Docker image to hub
       uses: docker/build-push-action@v1
       with:

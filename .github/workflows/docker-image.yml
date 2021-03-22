@@ -20,4 +20,9 @@ jobs:
     - name: Login to Docker
       run: docker login -u {{ secrets.DOCKER_USERNAME }}
     - name: Push the Docker image to hub
-      run: docker push darkryder16/playlist_downloader:latest
+      uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: darkryder16/playlist_downloader
+          tag_with_ref: true

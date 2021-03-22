@@ -1,5 +1,5 @@
 #Base image
-FROM python
+FROM python:rc-slim-buster
 
 #create a folder for our app
 WORKDIR /app

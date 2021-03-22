@@ -18,6 +18,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag darkryder16/playlist_downloader:latest
     - name: Login to Docker
-      run: docker login docker.io
+      run: docker login
     - name: Push the Docker image to hub
       run: docker push darkryder16/playlist_downloader:latest
